@@ -8,7 +8,7 @@
     "authors":  [ { "name": "Grégoire HUBERT", "email": "hubert.greg@gmail.com" } ],
     "require": {
         "php": ">=5.4.4",
-        "silexphp/silex": "1.*@dev",
+        "silexphp/silex": "1.*",
         "pomm-project/foundation": "dev-master"
     },
     "autoload": {
