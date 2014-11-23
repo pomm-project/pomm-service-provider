@@ -1,6 +1,6 @@
 # Pomm Service Provider
 
-This package contains a Pomm ServiceProvider for the [Silex](http://silex.sensiolabs.org/) micro-framework.
+This package contains a [Pomm](http://www.pomm-project.org) ServiceProvider for the [Silex](http://silex.sensiolabs.org/) micro-framework.
 
 ## Installation
 
@@ -23,7 +23,7 @@ Here is a sample `composer.json` file:
 ```php
 <?php
 // …
-$app->register(new PommServiceProvider(), 
+$app->register(new PommServiceProvider(),
     [
         'pomm.configuration' =>
         [
