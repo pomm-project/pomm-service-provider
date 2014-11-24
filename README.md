@@ -27,17 +27,22 @@ $app->register(new PommServiceProvider(),
     [
         'pomm.configuration' =>
         [
-            'my_db1' => ['dsn' => … ],
-            'my_db2' => ['dsn' => … ],
+            'my_db1' => ['dsn' => 'pgsql://user:pass@host:port/db_name'],
+            'my_db2' => 
+                [
+                    'dsn' => … ,
+                    'class:session_builder' => '\PommProject\ModelManager\SessionBuilder',
+                ],
             …
         ],
+        'pomm.logger.service' => 'monolog', // default
     ]
 );
 ```
 
-In case there is a logger that implements the standard `Psr\Logger` interface, it is possible to tell Pomm the name of the service using the `pomm.logger.service` parameter (`monolog` by default).
+If you want to use the `ModelManager` package, be sure to specify either the model manager `SessionBuilder` or, better: your project session builder.
 
-## Use it
+## Usage
 
 ```php
 <?php
