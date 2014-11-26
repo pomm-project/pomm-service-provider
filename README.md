@@ -15,9 +15,9 @@ And enable it in your application:
 ```php
 <?php
 
-use PommProject\Silex\ServiceProvider;
+use PommProject\Silex\ServiceProvider as PommProvider;
 // …
-$app->register(new PommServiceProvider(),
+$app->register(new PommProvider\PommServiceProvider(),
     [
         'pomm.configuration' =>
         [
@@ -39,9 +39,9 @@ This package also contain a `PommProfilerServiceProvider` to be used with the [`
 ```php
 <?php
 
-use PommProject\Silex\ServiceProvider;
+use PommProject\Silex\ServiceProvider as PommProvider;
 // …
-$app->register(new PommProfilerServiceProvider());
+$app->register(new PommProvider\PommProfilerServiceProvider());
 ```
 
 If you want to use the `ModelManager` package, be sure to specify either the model manager `SessionBuilder` or, better: your project session builder.
