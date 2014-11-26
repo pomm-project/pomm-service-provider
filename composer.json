@@ -9,7 +9,8 @@
     "require": {
         "php": ">=5.4.4",
         "silex/silex": "~2.0@dev",
-        "pomm-project/foundation": "dev-master"
+        "pomm-project/foundation": "dev-master",
+        "symfony/twig-bridge": "~2.6"
     },
     "autoload": {
         "psr-4": {
