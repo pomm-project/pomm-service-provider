@@ -12,10 +12,19 @@
         "pomm-project/foundation": "dev-master",
         "symfony/twig-bridge": "~2.6"
     },
+    "suggest": {
+        "pomm-project/model-manager": "dev-master",
+        "pomm-project/cli": "dev-master"
+    },
     "autoload": {
         "psr-4": {
             "PommProject\\Silex\\ServiceProvider\\": "sources/lib"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
+        }
+    }
 }
