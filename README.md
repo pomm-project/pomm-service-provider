@@ -1,6 +1,6 @@
 # Pomm Service Provider
 
-This package contains a [Pomm](http://www.pomm-project.org) ServiceProvider for the [Silex](http://silex.sensiolabs.org/) micro-framework.
+This package contains a [Pomm2](http://www.pomm-project.org) ServiceProvider for the [Silex](http://silex.sensiolabs.org/) micro-framework version 1.x. You can access the provider for Silex 2.x on the [master branch](https://github.com/pomm-project/pomm-service-provider) of this project.
 
 ## Installation
 
@@ -10,9 +10,9 @@ Here is a sample `composer.json` file:
 {
         "require": {
             "pomm-project/pomm-service-provider":   "dev-master",
-            "pomm-project/cli":                     "dev-master",
-            "pomm-project/model-manager":           "dev-master",
-            "pomm-project/foundation":              "dev-master",
+            "pomm-project/cli":                     "2.0.*@dev",
+            "pomm-project/model-manager":           "2.0.*@dev",
+            "pomm-project/foundation":              "2.0.*@dev",
             "silex/silex":                          "1.2.*"
         }
 }
