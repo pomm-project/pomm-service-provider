@@ -1,29 +1,23 @@
 # Pomm Service Provider
 
-This package contains a [Pomm](http://www.pomm-project.org) ServiceProvider for the [Silex](http://silex.sensiolabs.org/) micro-framework.
+This package contains a [Pomm](http://www.pomm-project.org) ServiceProvider for the [Silex](http://silex.sensiolabs.org) micro-framework.
 
 ## Installation
 
-Here is a sample `composer.json` file:
+To install this library, run the command below:
 
-```json
-{
-        "require": {
-            "pomm-project/pomm-service-provider":   "dev-master",
-            "pomm-project/cli":                     "dev-master",
-            "pomm-project/model-manager":           "dev-master",
-            "pomm-project/foundation":              "dev-master",
-            "silex/silex":                          "1.2.*"
-        }
-}
+```bash
+    composer require pomm-project/pomm-service-provider ~2.0@dev
 ```
 
-## Setup
+And enable it in your application:
 
 ```php
 <?php
+
+use PommProject\Silex\ServiceProvider as PommProvider;
 // …
-$app->register(new PommServiceProvider(),
+$app->register(new PommProvider\PommServiceProvider(),
     [
         'pomm.configuration' =>
         [
@@ -38,6 +32,16 @@ $app->register(new PommServiceProvider(),
         'pomm.logger.service' => 'monolog', // default
     ]
 );
+```
+
+This package also contain a `PommProfilerServiceProvider` to be used with the [`WebProfileProvider`](https://github.com/silexphp/Silex-WebProfiler).
+
+```php
+<?php
+
+use PommProject\Silex\ServiceProvider as PommProvider;
+// …
+$app->register(new PommProvider\PommProfilerServiceProvider());
 ```
 
 If you want to use the `ModelManager` package, be sure to specify either the model manager `SessionBuilder` or, better: your project session builder.

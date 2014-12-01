@@ -8,13 +8,22 @@
     "authors":  [ { "name": "Grégoire HUBERT", "email": "hubert.greg@gmail.com" } ],
     "require": {
         "php": ">=5.4.4",
-        "silex/silex": "1.*",
-        "pomm-project/foundation": "dev-master"
+        "silex/silex": "~2.0@dev",
+        "pomm-project/foundation": "2.0.*@dev",
+        "symfony/twig-bridge": "~2.6"
+    },
+    "suggest": {
+        "pomm-project/model-manager": "2.0.*@dev",
+        "pomm-project/cli": "2.0.*@dev"
     },
     "autoload": {
         "psr-4": {
             "PommProject\\Silex\\ServiceProvider\\": "sources/lib"
         }
     },
-    "minimum-stability": "dev"
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        }
+    }
 }
