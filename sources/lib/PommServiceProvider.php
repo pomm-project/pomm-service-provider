@@ -11,12 +11,13 @@ namespace PommProject\Silex\ServiceProvider;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
+
 use PommProject\Foundation\Pomm;
 
 /**
  * PommServiceProvider
  *
- * Silex ServiceProvider for Pomm.
+ * Silex2 ServiceProvider for Pomm2.
  *
  * @package PommServiceProvider
  * @copyright 2014 Grégoire HUBERT
@@ -24,8 +25,13 @@ use PommProject\Foundation\Pomm;
  * @license X11 {@link http://opensource.org/licenses/mit-license.php}
  * @see ServiceProviderInterface
  */
-class PommServiceProvider implements  ServiceProviderInterface
+class PommServiceProvider implements ServiceProviderInterface
 {
+    /**
+     * register
+     *
+     * @see ServiceProviderInterface
+     */
     public function register(Container $app)
     {
         $app['pomm'] = function ($app) {

@@ -11,7 +11,9 @@ namespace PommProject\Silex\ServiceProvider;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
+
 use PommProject\Silex\ServiceProvider\DatabaseDataCollector;
+
 use Symfony\Bridge\Twig\Extension\YamlExtension;
 
 /**
@@ -21,12 +23,17 @@ use Symfony\Bridge\Twig\Extension\YamlExtension;
  *
  * @package PommServiceProvider
  * @copyright 2014 Grégoire HUBERT
- * @author Grégoire HUBERT
+ * @author Jérôme MACIAS
  * @license X11 {@link http://opensource.org/licenses/mit-license.php}
  * @see ServiceProviderInterface
  */
 class PommProfilerServiceProvider implements ServiceProviderInterface
 {
+    /**
+     * register
+     *
+     * @see ServiceProviderInterface
+     */
     public function register(Container $app)
     {
         $app->extend('data_collectors', function ($collectors, $app) {
@@ -39,7 +46,7 @@ class PommProfilerServiceProvider implements ServiceProviderInterface
 
         $app['data_collector.templates'] = array_merge(
             $app['data_collector.templates'],
-            array(array('db', '@Pomm/Profiler/db.html.twig'))
+            [['db', '@Pomm/Profiler/db.html.twig']]
         );
 
         $app['twig'] = $app->extend('twig', function ($twig, $app) {
