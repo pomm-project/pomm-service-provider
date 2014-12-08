@@ -5,7 +5,7 @@
     "keywords": ["silex", "pomm"],
     "homepage": "http://www.pomm-project.org",
     "license":  "MIT",
-    "authors":  [ { "name": "Grégoire HUBERT", "email": "hubert.greg@gmail.com" } ],
+    "authors":  [ { "name": "Grégoire HUBERT", "email": "hubert.greg@gmail.com" }, { "name": "Jérôme MACIAS", "email": "jerome.macias@gmail.com" } ],
     "require": {
         "php": ">=5.4.4",
         "silex/silex": "~2.0@dev",
