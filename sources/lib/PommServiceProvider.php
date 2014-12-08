@@ -9,15 +9,15 @@
  */
 namespace PommProject\Silex\ServiceProvider;
 
-use PommProject\Foundation\Pomm;
-
 use Silex\Application;
 use Silex\ServiceProviderInterface;
+
+use PommProject\Foundation\Pomm;
 
 /**
  * PommServiceProvider
  *
- * Silex ServiceProvider for Pomm.
+ * Silex ServiceProvider for Pomm2.
  *
  * @package PommServiceProvider
  * @copyright 2014 Grégoire HUBERT
@@ -25,37 +25,37 @@ use Silex\ServiceProviderInterface;
  * @license X11 {@link http://opensource.org/licenses/mit-license.php}
  * @see ServiceProviderInterface
  */
-class PommServiceProvider implements  ServiceProviderInterface
+class PommServiceProvider implements ServiceProviderInterface
 {
-   /**
-    * register
-    *
-    * @see ServiceProviderInterface
-    */
-   public function register(Application $app)
-   {
-       $app['pomm'] = $app->share(function($c) {
-           $pomm = new Pomm($c['pomm.configuration']);
+    /**
+     * register
+     *
+     * @see ServiceProviderInterface
+     */
+    public function register(Application $app)
+    {
+        $app['pomm'] = $app->share(function () use ($app) {
+            $pomm = new Pomm($app['pomm.configuration']);
 
-           $service = isset($c['pomm.logger.service'])
-               ? $c['pomm.logger.service']
-               : 'monolog'
-               ;
+                $service = isset($app['pomm.logger.service'])
+                ? $app['pomm.logger.service']
+                : 'monolog'
+                ;
 
-           if (isset($c[$service])) {
-               $pomm->setLogger($c[$service]);
-           }
+            if (isset($app[$service])) {
+                $pomm->setLogger($app[$service]);
+            }
 
-           return $pomm;
-       });
-   }
+            return $pomm;
+        });
+    }
 
-   /**
-    * boot
-    *
-    * @see ServiceProviderInterface
-    */
-   public function boot(Application $app)
-   {
-   }
+    /**
+     * boot
+     *
+     * @see ServiceProviderInterface
+     */
+    public function boot(Application $app)
+    {
+    }
 }
