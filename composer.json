@@ -1,7 +1,7 @@
 {
     "name": "pomm-project/pomm-service-provider",
     "type": "library",
-    "description":  "Pomm Service Provider for the Silex microframework.",
+    "description":  "Pomm Service Provider for the Silex 1.x microframework.",
     "keywords": ["silex", "pomm"],
     "homepage": "http://www.pomm-project.org",
     "license":  "MIT",
