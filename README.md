@@ -23,12 +23,12 @@ Here is a sample `composer.json` file:
 ```php
 <?php
 // …
-$app->register(new PommServiceProvider(),
+$app->register(new PommProject\Silex\ServiceProvider\PommServiceProvider(),
     [
         'pomm.configuration' =>
         [
             'my_db1' => ['dsn' => 'pgsql://user:pass@host:port/db_name'],
-            'my_db2' => 
+            'my_db2' =>
                 [
                     'dsn' => … ,
                     'class:session_builder' => '\PommProject\ModelManager\SessionBuilder',
