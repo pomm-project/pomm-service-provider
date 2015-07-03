@@ -9,7 +9,7 @@ Here is a sample `composer.json` file:
 ```json
 {
         "require": {
-            "pomm-project/pomm-service-provider":   "dev-master",
+            "pomm-project/pomm-service-provider":   "dev-silex-1",
             "pomm-project/cli":                     "2.0.*@dev",
             "pomm-project/model-manager":           "2.0.*@dev",
             "pomm-project/foundation":              "2.0.*@dev",
