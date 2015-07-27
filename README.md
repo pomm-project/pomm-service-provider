@@ -1,6 +1,7 @@
 # Pomm Service Provider
 
 [![Monthly Downloads](https://poser.pugx.org/pomm-project/pomm-service-provider/d/monthly.png)](https://packagist.org/packages/pomm-project/pomm-service-provider) [![License](https://poser.pugx.org/pomm-project/pomm-service-provider/license.svg)](https://packagist.org/packages/pomm-project/pomm-service-provider)
+
 This package contains a [Pomm2](http://www.pomm-project.org) ServiceProvider for the [Silex](http://silex.sensiolabs.org/) micro-framework version 1.x. You can access the provider for Silex 2.x on the [master branch](https://github.com/pomm-project/pomm-service-provider) of this project.
 
 ## Installation
