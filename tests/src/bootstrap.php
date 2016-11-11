@@ -2,7 +2,6 @@
 
 use \Silex\Provider\TwigServiceProvider;
 use \Silex\Provider\WebProfilerServiceProvider;
-use \Silex\Provider\UrlGeneratorServiceProvider;
 use \Silex\Provider\HttpFragmentServiceProvider;
 use \Silex\Provider\ServiceControllerServiceProvider;
 use \PommProject\Silex\ServiceProvider\PommServiceProvider;
@@ -29,7 +28,6 @@ $app->register(new PommServiceProvider(), [
 ]);
 
 if (class_exists('\Silex\Provider\WebProfilerServiceProvider')) {
-    $app->register(new UrlGeneratorServiceProvider);
     $app->register(new ServiceControllerServiceProvider);
     $app->register(new HttpFragmentServiceProvider);
 
