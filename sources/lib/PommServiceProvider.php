@@ -37,13 +37,16 @@ class PommServiceProvider implements ServiceProviderInterface
         $app['pomm'] = $app->share(function () use ($app) {
             $pomm = new Pomm($app['pomm.configuration']);
 
-                $service = isset($app['pomm.logger.service'])
+            $service = isset($app['pomm.logger.service'])
                 ? $app['pomm.logger.service']
-                : 'monolog'
-                ;
+                : 'monolog';
 
             if (isset($app[$service])) {
                 $pomm->setLogger($app[$service]);
+            }
+
+            if (isset ($app['pomm.data_collector.configurator'])) {
+                $app['pomm.data_collector.configurator']->configure($pomm);
             }
 
             return $pomm;
