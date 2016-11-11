@@ -1,0 +1,5 @@
+/bin/
+/cache/
+/composer.lock
+/src/config/config.php
+/vendor/

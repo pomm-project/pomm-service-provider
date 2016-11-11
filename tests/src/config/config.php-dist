@@ -1,0 +1,10 @@
+<?php
+
+return array(
+    'debug' => true,
+    'pomm' => array(
+        'test' => array(
+            'dsn' => 'pgsql://postgres:12345@127.0.0.1:5432/pomm_test',
+        ),
+    ),
+);
