@@ -9,8 +9,8 @@
  */
 namespace PommProject\Silex\ServiceProvider;
 
-use Silex\Application;
-use Silex\ServiceProviderInterface;
+use Pimple\Container;
+use Pimple\ServiceProviderInterface;
 
 use PommProject\Foundation\Pomm;
 
@@ -32,9 +32,9 @@ class PommServiceProvider implements ServiceProviderInterface
      *
      * @see ServiceProviderInterface
      */
-    public function register(Application $app)
+    public function register(Container $app)
     {
-        $app['pomm'] = $app->share(function () use ($app) {
+        $app['pomm'] = function () use ($app) {
             $pomm = new Pomm($app['pomm.configuration']);
 
             $service = isset($app['pomm.logger.service'])
@@ -50,15 +50,6 @@ class PommServiceProvider implements ServiceProviderInterface
             }
 
             return $pomm;
-        });
-    }
-
-    /**
-     * boot
-     *
-     * @see ServiceProviderInterface
-     */
-    public function boot(Application $app)
-    {
+        };
     }
 }
