@@ -10,13 +10,12 @@ Here is a sample `composer.json` file:
 
 ```json
 {
-        "require": {
-            "pomm-project/pomm-service-provider":   "dev-silex-2",
-            "pomm-project/cli":                     "2.0.*@dev",
-            "pomm-project/model-manager":           "2.0.*@dev",
-            "pomm-project/foundation":              "2.0.*@dev",
-            "silex/silex":                          "~2.0"
-        }
+    "require": {
+        "pomm-project/pomm-service-provider": "dev-silex-2",
+        "pomm-project/cli":                   "~2.0",
+        "pomm-project/model-manager":         "~2.0",
+        "silex/silex":                        "~2.0"
+    }
 }
 ```
 
